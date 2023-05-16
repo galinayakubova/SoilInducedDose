@@ -1,0 +1,317 @@
+c 3 DETECTORS
+c w/ Shielding in Place and DETECTOR ANGLED
+c
+c CELL CARDS
+c
+c @@@@@@@@@@ Detectors @@@@@@@@@@@@@@@@@
+c
+10 7 -3.67 -109 113 -116 119 -103 104 imp:n,p 1 $NaI Detector #1 Active Region
+11 7 -3.67 -110 114 -117 120 -105 106 imp:n,p 1 $NaI Detector #2 Active Region
+111 7 -3.67 -111 115 -118 121 -107 108 imp:n,p 1 $NaI Detector #3 Active Region
+c
+c @@@@@@@@@ Shielding @@@@@@@@@@@@@@@@@
+c
+121 5 -7.874 61 -612 -613 614 -65 615 imp:n,p 1 $Front Fe1
+122 5 -7.874 612 -622 -623 624 -65 625 imp:n,p 1 $Front Fe2
+123 3 -1.465 622 -632 -633 634 -65 635 imp:n,p 1 $Front Compressed BA
+13 8 -2.7 -61 76 -65 66 -73 75 #133 #1333 imp:n,p 1 $Side1 Water Aluminum Tank
+14 8 -2.7 -61 76 -65 66 72 -74 #144 #1444 imp:n,p 1 $Side2 Water Aluminum Tank 
+133 4 -1.0192 755 -733 766 -77 78 -655 imp:n,p 1 $Side1 Borated Water
+144 4 -1.0192 722 -744 766 -77 78 -655 imp:n,p 1 $Side2 Borated Water
+1333 12 -0.00129 755 -733 766 -77 -78 6666 imp:n,p 1 $Side1 Air in Tank
+1444 12 -0.00129 722 -744 766 -77 -78 6666 imp:n,p 1 $Side2 Air in Tank
+c
+c @@@@@@@@@@ PIT & SOIL VOLUME @@@@@@@@@@@
+c
+201 201 -1.333 -1 2 -3 4 -5001 5 imp:n,p 1 $ SOIL VOLUME
+211 202 -1.365 -1 2 -3 4 5001 -5002 imp:n,p 1 $ SOIL VOLUME
+221 203 -1.396 -1 2 -3 4 5002 -5003 imp:n,p 1 $ SOIL VOLUME
+231 204 -1.424 -1 2 -3 4 5003 -5004 imp:n,p 1 $ SOIL VOLUME
+241 205 -1.451 -1 2 -3 4 5004 -5005 imp:n,p 1 $ SOIL VOLUME
+251 206 -1.475 -1 2 -3 4 5005 -5006 imp:n,p 1 $ SOIL VOLUME
+261 207 -1.498 -1 2 -3 4 5006 -5007 imp:n,p 1 $ SOIL VOLUME
+271 208 -1.519 -1 2 -3 4 5007 -5008 imp:n,p 1 $ SOIL VOLUME
+281 209 -1.539 -1 2 -3 4 5008 -5009 imp:n,p 1 $ SOIL VOLUM
+291 210 -1.557 -1 2 -3 4 5009 -5010 imp:n,p 1 $ SOIL VOLUME
+2901 211 -1.574 -1 2 -3 4 5010 -5011 imp:n,p 1 $ SOIL VOLUME
+2911 212 -1.59 -1 2 -3 4 5011 -6 imp:n,p 1 $ SOIL VOLUME
+c
+30 12 -0.00129 -200 #10 #11 #111 #121 #122 #123 #13 #14 #133 #144 #1333 #1444
+     #201 #211 #221 #231 
+     #241 #251 #261 #271
+     #281 #291 #2901 
+     #2911 imp:n,p 1 $Rest of the World
+31 0 200 imp:n,p 0 $Outside world
+
+c SURFACE CARDS
+c
+c %%%%Pit and Soil Volume
+c %%%%%%%%%%%
+1 px 75 $Pit
+2 px -75 $Pit
+3 py 75 $Pit
+4 py -75 $Pit
+5 pz 30 $Pit
+6 pz 90 $Pit
+5001 pz 35 $Soil
+5002 pz 40 $Soil
+5003 pz 45 $Soil
+5004 pz 50 $Soil
+5005 pz 55 $Soil
+5006 pz 60 $Soil
+5007 pz 65 $Soil
+5008 pz 70 $Soil
+5009 pz 75 $Soil
+5010 pz 80 $Soil
+5011 pz 85 $Soil
+c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+c Active Detector Region
+c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+103 1 py 20.75 $Det 1 outer plane active region
+104 1 py 8.05 $Det 1 inside plane active region
+105 1 py 6.25 $Det 2 plane on Det 1 side active region
+106 1 py -6.25 $Det 2 plane on Det 3 side active region
+107 1 py -8.05 $Det 3 inside plane active region
+108 1 py -20.75 $Det 3 outer plane active region
+109 1 px 7.98 $Det 1 top plane of active region
+110 1 px 7.98 $Det 2 top plane of active region
+111 1 px 7.98 $Det 3 top plane of active region
+113 1 px -7.22 $Det 1 bottom plane of active region
+114 1 px -7.00 $Det 2 bottom plane of active region
+115 1 px -7.22 $Det 3 bottom plane of active region
+116 1 pz 7.2 $Det 1 back plane of active region
+117 1 pz 7.2 $Det 2 back plane of active region
+118 1 pz 7.2 $Det 3 back plane of active region
+119 1 pz -5.5 $Det 1 front plane of active region
+120 1 pz -5.5 $Det 2 front plane of active region
+121 1 pz -5.5 $Det 3 front plane of active region
+c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+c Shielding Surfaces
+c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+61 px 22.86 $Generator side surface of Fe1
+612 px 27.96 $Detector side surface of Fe1
+613 py 22.5 $Side surface of Fe1
+614 py -22.5 $Side surface of Fe1
+615 pz -11.07 $top surface of Fe1
+622 px 33.06 $Detector side surface of Fe2
+623 py 8.55 $Side surface of Fe2
+624 py -8.55 $Side surface of Fe2
+625 pz -38.97 $top surface of Fe2
+632 px 41.96 $Detector side surface of BA
+633 py 27 $Side surface of BA
+634 py -27 $Side surface of BA
+635 pz -14.27 $top surface of BA
+65 pz 6.03 $bottom surface of shielding boxes
+655 pz 5.715 $bottom surface of shielding water
+66 pz -14.2875 $top surface of shielding boxes
+6666 pz -13.97 $top surface of AIR in shielding tanks
+71 px 22.5425 $Detector side surface of generator shielding
+72 py 7.858125 $side surface of generator shielding and inside of water tank
+73 py -7.858125 $side surface of generator shielding and inside of water tank
+c ************************
+c Side Borated Water Tanks
+c ************************
+722 py 8.175625 $side surface of inside of water
+733 py -8.175625 $side surface of inside of water
+74 py 28.178125 $outside surface of side water TANK
+744 py 27.860625 $outside surface of side water
+75 py -28.178125 $outside surface of side water TANK
+755 py -27.860625 $outside surface of side water
+76 px -15.24 $Generator side surface of water TANK
+766 px -14.9225 $Generator side surface of water
+77 px 22.5425 $Detector side surface of water
+78 pz -6.985 $top surface of SIDE shielding water (5 inches of water)
+200 so 800
+
+c DATA CARDS
+mode n p
+c dump every 24 hrs
+prdmp 1j -1440 1j 1
+c 100 keV Neutron Energy Cutoff
+Cut:n 1j 0.1
+phys:n 1j 14 $analog neutron transport
+phys:p
+c <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+c Coordinate Transformation for Detector Surface => 45 degrees from X
+c >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*TR1 68 0 -8 45 90 135 90 0 90 45 90 45
+c
+sdef
+c ********************
+c begin material cards
+c ********************
+c **********************************
+c C4wt, Mo0, Soil by layers in the Pit
+c ***********************************
+m201	8016	-0.51480	$Oxygen
+	14000	-0.35052	$Silicon
+	13027	-0.03303	$Aluminum
+	26000	-0.01276	$Iron
+	6000	-0.04306	$Carbon
+	20000	-0.01077	$Calcium
+	19000	-0.01116	$Potassium
+	11023	-0.01638	$Sodium
+	1001	-0.00752	$Hydrogen
+c **********************************
+m202	8016	-0.52926	$Oxygen
+	14000	-0.36037	$Silicon
+	13027	-0.03396	$Aluminum
+	26000	-0.01312	$Iron
+	6000	-0.01617	$Carbon
+	20000	-0.01107	$Calcium
+	19000	-0.01147	$Potassium
+	11023	-0.01684	$Sodium
+	1001	-0.00773	$Hydrogen
+c **********************************
+m203	8016	-0.53427	$Oxygen
+	14000	-0.36378	$Silicon
+	13027	-0.03428	$Aluminum
+	26000	-0.01324	$Iron
+	6000	-0.00686	$Carbon
+	20000	-0.01117	$Calcium
+	19000	-0.01158	$Potassium
+	11023	-0.01700	$Sodium
+	1001	-0.00781	$Hydrogen
+c **********************************
+m204	8016	-0.53600	$Oxygen
+	14000	-0.36496	$Silicon
+	13027	-0.03439	$Aluminum
+	26000	-0.01329	$Iron
+	6000	-0.00364	$Carbon
+	20000	-0.01121	$Calcium
+	19000	-0.01162	$Potassium
+	11023	-0.01706	$Sodium
+	1001	-0.00783	$Hydrogen
+c **********************************
+m205	8016	-0.53660	$Oxygen
+	14000	-0.36537	$Silicon
+	13027	-0.03443	$Aluminum
+	26000	-0.01330	$Iron
+	6000	-0.00252	$Carbon
+	20000	-0.01122	$Calcium
+	19000	-0.01163	$Potassium
+	11023	-0.01708	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m206	8016	-0.53681	$Oxygen
+	14000	-0.36551	$Silicon
+	13027	-0.03444	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00214	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01708	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m207	8016	-0.53688	$Oxygen
+	14000	-0.36557	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00200	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m208	8016	-0.53691	$Oxygen
+	14000	-0.36558	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00196	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m209	8016	-0.53692	$Oxygen
+	14000	-0.36559	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00194	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m210	8016	-0.53692	$Oxygen
+	14000	-0.36559	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00193	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m211	8016	-0.53692	$Oxygen
+	14000	-0.36559	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00193	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m212	8016	-0.53692	$Oxygen
+	14000	-0.36559	$Silicon
+	13027	-0.03445	$Aluminum
+	26000	-0.01331	$Iron
+	6000	-0.00193	$Carbon
+	20000	-0.01123	$Calcium
+	19000	-0.01164	$Potassium
+	11023	-0.01709	$Sodium
+	1001	-0.00784	$Hydrogen
+c **********************************
+m3    1001 -0.048535 $Boric acid
+      5010 -0.034981
+      5011 -0.139923
+      8016 -0.776561
+c **********************************
+m4    1001 -0.1081076584 $Borated water/ 4.8 wt% H3BO3
+      8016 -0.8835
+      5010 -0.0015447980
+      5011 -0.0068508435
+c **********************************
+m5 26000 1 $Iron
+c **********************************
+m7     11023 0.5 $NaI
+       53127 0.5
+c **********************************
+m8     13027 1 $ Aluminum
+c ************ air den=1.15e-3g/cc
+m12     8016 -0.23
+        7014 -0.77
+c
+c end material cards
+c
+rand seed=1512641324321 $different initial random #; seed# - any less 18 digits
+c
+c begin tallies
+c ******* F6 produces absorbed dose **************
+f6:n (201 211 221 231 241 251 261 271 281 291 2901 2911)  $ neutrons MeV/g in cell 201
+Fm6   1.8e7  $ source strength n/s
+c ****************************
+f16:p (201 211 221 231 241 251 261 271 281 291 2901 2911) $ photons MeV/g in cell 201
+Fm16   1.8e7
+c ****************************
+*f5:n 0.0 0.0 30.0 0.5 $ for n; MeV/cm2; 30 cm; thickness 0.5 cm
+Fm5 1.8e7  $ n/s
+c ****************************
+*f15:p 0.0 0.0 30.0 0.5 $ for p; MeV/cm2; 30 cm; thickness 0.5 cm
+Fm15 1.8e7  $ n/s
+c ****************************
+c *fmesh4:n  GEOM= xyz  ORIGIN= -130 -130 -100  
+c           IMESH= 130   IINTS= 65
+c           JMESH= 130   JINTS= 65
+c           KMESH= 100   KINTS= 50
+c fm4 1.8e7
+c *fmesh14:p  GEOM= xyz  ORIGIN= -130 -130 -100  
+c           IMESH= 130   IINTS= 65
+c           JMESH= 130   JINTS= 65
+c           KMESH= 100   KINTS= 50
+c fm14 1.8e7
+c end tallies
+nps 1e6
+
+
